@@ -13,4 +13,6 @@ RUN yum install -y epel-release && \
     cd / && rm -Rf /tmp/plv8-$PLV8_VERSION && \
     yum -y history undo last && yum -y --setopt=tsflags=nodocs install v8 && yum clean all
 
+COPY run-postgresql /usr/bin/run-postgresql
+
 USER 26
